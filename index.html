@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <title>Campo de Entrenamiento</title>
+    <link rel="stylesheet" href="estilo-proyecto.css">
+    <script></script>
+</head>
+
+<body>
+    <header>
+        <h1>Entrenamiento</h1>
+        <p>Campo de entrenamiento didactico</p>
+    </header>
+    <div class="container">
+        <section id="p0">
+            <h2>1- ¿Cuál es la presion hidrostática ejercida en el fondo del pozo, usando la informacion que se detalla
+                abajo?</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>14675 pies TVD del trepano (4472.94 metros)</td>
+                        <td>Desnidad del lodo actual 12,2 ppg (1461,88 g/l)</td>
+                    </tr>
+                    <tr>
+                        <td>16936 pies MD del trepano (5162.09 metros)</td>
+                        <td>Densidad del lodo de prueba 11,6 ppg (1389.9 g/l)</td>
+                    </tr>
+                    <tr>
+                        <td> 9873 pies TDV del zapato del revestomiento (3009.29 metros)</td>
+                        <td>Pérdida de carga anular 175 psi</td>
+                    </tr>
+                    <tr>
+                        <td>9901 pies MD del zapato del revestimiento (3017.825 metros)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <label>
+                <input type="radio" value="1" name="p0" onclick="respuesta(0,this)">A. 8852 psi
+            </label>
+            <label>
+                <input type="radio" value="2" name="p0" onclick="respuesta(0,this)">B. 9786 psi
+            </label><label>
+                <input type="radio" value="3" name="p0" onclick="respuesta(0,this)">C. 9310 psi
+            </label><label>
+                <input type="radio" value="4" name="p0" onclick="respuesta(0,this)">D. 9485 psi
+            </label>
+        </section>
+
+        <section id="p1">
+            <h2>2. Se baja un casing con ensamble de válvula flotadora sin retorno ¿Que puede pasar si el casing
+                no se mantiene lleno?</h2>
+            <label>
+                <input type="radio" value="1" name="p1" onclick="respuesta(1,this)">A. Peso en el gancho disminuye de
+                repente.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p1" onclick="respuesta(1,this)">B. La válvula del flotador puede
+                fallar haciendo que el lodo se meta en el casing por efecto del tubo en "U" </label>
+            <label>
+                <input type="radio" value="3" name="p1" onclick="respuesta(1,this)">C. El casing estllara cerca de la
+                superficie.
+            </label>
+            <label>
+                <input type="radio" value="4" name="p1" onclick="respuesta(1,this)">D. El casing estallara justo encima
+                del ensambke de la válvula
+                flotdora.
+            </label>
+        </section>
+        <section id=" p2">
+            <h2>3. Un pozo se cierra con una SICP estabilizada en 500 psi y 0 psi en el manómetro de tubería de
+                perforación. El perforador bombeó a 5 EPM hasta tocar la válvula del flotador y la bomba se
+                apago. Los
+                manómetros ahora indican las siguientes presiones. ¿Cuál será la SIDPP (PCIBS)?</h2>
+
+            <div class="manometros">
+                <strong>Presión en casing (SICP):</strong> <span id="sSICP">500</span> psi <br>
+                <strong>Presión en tubería (SIDPP):</strong> <span id="sSIDPP">0</span> psi
+            </div>
+            <button onclick="encenderBomba()">Encender bomba</button>
+
+            <div class="manometros nuevas-lecturas" id="lecturasNuevas">
+                <strong>Nuevas presiones despúes de bombear:</strong><br>
+                Casing (SICP): <span>580</span> psi<br>
+                Tubería (SIDPP): <span>360</span> psi
+            </div>
+
+            <label>
+                <input type="radio" value="1" name="p2" onclick="respuesta(2,this)">A. 360 psi
+            </label>
+            <label>
+                <input type="radio" value="2" name="p2" onclick="respuesta(2,this)">A. 500 psi
+            </label>
+            <label>
+                <input type="radio" value="3" name="p2" onclick="respuesta(2,this)">A. 280 psi
+            </label>
+            <label>
+                <input type="radio" value="4" name="p2" onclick="respuesta(2,this)">A. 580 psi
+            </label>
+        </section>
+        <section class="p3">
+            <h2>4.¿Qué es lo que indica la SIDPP (presión de tubería o barra de sondeo), cuando se cierra un pozo porque
+                hay una surgencia (amago/kick) bajo balance (underbalanced)?</h2>
+            <label>
+                <input type="radio" value="1" name="p3" onclick="respuesta(3,this)">A. La presión atrapada por haber
+                cerrado el pozo
+            </label>
+            <label>
+                <input type="radio" value="2" name="p3" onclick="respuesta(3,this)">B. La MAASP (Presión anular máxima
+                admisible).
+            </label>
+            <label>
+                <input type="radio" value="3" name="p3" onclick="respuesta(3,this)">C. La diferencia entre la presión de
+                formación y la presión de
+                admisión (Lake off).
+            </label>
+            <label>
+                <input type="radio" value="4" name="p3" onclick="respuesta(3,this)">D. la diferencia entre la presiónde
+                formación y la presión
+                hidrostática del lodo del lado de la sarta de perforación.
+            </label>
+        </section>
+
+        <section class="p4">
+            <h2>5. ¿Cómo es una típica velocidad reducida de bomba (VRB/SCR)?</h2>
+            <label>
+                <input type="radio" value="1" name="p4" onclick="respuesta(4,this)">A. Entre 1 a 5 barriles por minuto.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p4" onclick="respuesta(4,this)">B. Igual que la velocidad de la
+                bomba cuiando se perfora.
+            </label>
+            <label>
+                <input type="radio" value="3" name="p4" onclick="respuesta(4,this)">C. 75% de la velocidad de la bomba
+                cuando se perfora.
+            </label>
+            <label>
+                <input type="radio" value="4" name="p4" onclick="respuesta(4,this)">D. Entre 75 y 95 emboladas (strokes)
+                por minuto (EPM, SPM).
+            </label>
+        </section>
+
+        <section class="p5">
+            <h2>6. ¿Cuál es el mínimo aceptado generalmente de barreras que deberán establecerse y probarse para la
+                mayoría de las operaciónes de perforación?</h2>
+            <label>
+                <input type="radio" value="1" name="p5" onclick="respuesta(5,this)">A. 2
+            </label>
+            <label>
+                <input type="radio" value="2" name="p5" onclick="respuesta(5,this)">B. 3
+            </label>
+            <label>
+                <input type="radio" value="3" name="p5" onclick="respuesta(5,this)">C. 1
+            </label>
+            <label>
+                <input type="radio" value="4" name="p5" onclick="respuesta(5,this)">D. 4
+            </label>
+        </section>
+
+        <section class="p6">
+            <h2>7. ¿Cuál de las siguientes está considerada como una "barrera de procedimiento"?</h2>
+            <label>
+                <input type="radio" value="1" name="p6" onclick="respuesta(6,this)">A. El conjunto de Packers asentado.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p6" onclick="respuesta(6,this)">B. El zapato del casing.
+            </label>
+            <label>
+                <input type="radio" value="3" name="p6" onclick="respuesta(6,this)">C. Monitoreo del pozo para percibir
+                ganancias o pérdidas.
+            </label>
+            <label>
+                <input type="radio" value="4" name="p6" onclick="respuesta(6,this)">D. El fluido de perforación.
+            </label>
+        </section>
+
+        <section class="p7">
+            <h2>8. Una píldora se bombea a la sarta de perforación para permitir que la tubería (sondeo) se saque
+                "seco". ¿Qué efecto tendrá la píldora sobre la presión de fondo de pozo (BHP)?</h2>
+            <table>
+                <thead>Datos del pozo:</thead>
+                <tbody>
+                    <tr>
+                        <td>Desnsidad del lodo = 10,5 ppg</td>
+                    </tr>
+                    <tr>
+                        <td>Densidad de la píldora = 12,5 ppg</td>
+                    </tr>
+                    <tr>
+                        <td>Volumen de la píldora = 20 bbls</td>
+                    </tr>
+                </tbody>
+            </table>
+            <label>
+                <input type="radio" value="1" name="p7" onclick="respuesta(7,this)">A. La BHp disminuirá.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p7" onclick="respuesta(7,this)">B. La BHP permanecerá igual.
+            </label>
+            <label>
+                <input type="radio" value="3" name="p7" onclick="respuesta(7,this)">C. La BHP aumentará.
+            </label>
+        </section>
+
+        <section class="p8">
+            <h2>9. Se extraen del pozo dos paradas de portamechas (Drill Collar) secos (vacíos). capacidad de
+                portamechas (Drill collar) = 0.0073 bbl/pie. Desplazamiento del metal del portamechas = 0.0370 bbl/pies.
+                Una parada 90 pies. ¿Cúantos barriles de lodo de perforacion teoricos deberán bombearse al pozo?</h2>
+            <label>
+                <input type="radio" value="1" name="p8" onclick="respuesta(8,this)">A. 1.3 bbls.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p8" onclick="respuesta(8,this)">B. 6.6 bbls.
+            </label>
+            <label>
+                <input type="radio" value="3" name="p8" onclick="respuesta(8,this)">C. 7.9 bbls.
+            </label>
+            <label>
+                <input type="radio" value="4" name="p8" onclick="respuesta(8,this)">D. 5.5 bbls.
+            </label>
+        </section>
+
+        <section class="p9">
+            <h2>10. Una herramienta de medición mientras se perfora (MWD) en el ensamblaje del fondo del pozo puede
+                proporcionar información que indica una reducción de la DEC (EDC) durante las operaciones de
+                perforación: ¿Qué podría causar una reducción en la DEC mientras se perfora?</h2>
+            <label>
+                <input type="radio" value="1" name="p9" onclick="respuesta(9,this)">A. Un cambio en la velociad de
+                penetración.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p9" onclick="respuesta(9,this)">B. Un aumento en el sobre balance
+                (overbalance) debido a un
+                aumento de la presión de formación.
+            </label>
+            <label>
+                <input type="radio" value="3" name="p9" onclick="respuesta(9,this)">C. Un cambio en el azimuth y
+                elevación del pozo.
+            </label>
+            <label>
+                <input type="radio" value="4" name="p9" onclick="respuesta(9,this)">D. Una pérdida de sobre balance
+                (overbalance) por fluido de la
+                formación contaminando el lodo en el espacio anular.
+            </label>
+        </section>
+
+        <button onclick="corregir()">CORREGIR</button>
+        <h3>Cantidad acertadas: <span id="resultado"></span></h3>
+
+    </div>
+    <script src="script.js">
+
+    </script>
+
+</body>
+
+</html>
